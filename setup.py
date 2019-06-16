@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 
 def read_file(filename, cb):
-    with codecs.open('README.md', 'r', 'utf8') as f:
+    with codecs.open(filename, 'r', 'utf8') as f:
         return cb(f)
 
 
@@ -25,9 +25,9 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=read_file('requirements.txt', lambda f: list(filter(bool, map(str.strip, f)))),
 
-    classifiers=(
+    classifiers=[
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Topic :: Software Development :: Libraries',
         'Programming Language :: Python :: 3'
-    ),
+    ]
 )
